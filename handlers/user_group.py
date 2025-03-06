@@ -59,7 +59,7 @@ async def message_makake(message: types.Message):
 
         # Если достигли случайного числа от 7 до 10
         if user_message_count >= randint(7, 10):
-            await message.answer(choice(replies))  # Текст можно поменять
+            await message.reply(choice(replies))  # Текст можно поменять
             user_message_count = 0  # Сбрасываем счётчик
 
 @ug_router.message(Command('about', ignore_case=True))
