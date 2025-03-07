@@ -47,20 +47,20 @@ async def mem_cmd(message: types.Message):
 async def artur_cmd(message: types.Message):
     await message.answer(choice(poshel))
 
-# Счётчик сообщений
-user_message_count = 0
+# # Счётчик сообщений
+# user_message_count = 0
 
-@ug_router.message()
-async def message_makake(message: types.Message):
-    global user_message_count
+# @ug_router.message()
+# async def message_makake(message: types.Message):
+#     global user_message_count
 
-    if message.from_user.id == TARGET_USER_ID:
-        user_message_count += 1  # Увеличиваем счётчик
+#     if message.from_user.id == TARGET_USER_ID:
+#         user_message_count += 1  # Увеличиваем счётчик
 
-        # Если достигли случайного числа от 7 до 10
-        if user_message_count >= randint(7, 10):
-            await message.reply(choice(replies))  # Текст можно поменять
-            user_message_count = 0  # Сбрасываем счётчик
+#         # Если достигли случайного числа от 7 до 10
+#         if user_message_count >= randint(7, 10):
+#             await message.reply(choice(replies))  # Текст можно поменять
+#             user_message_count = 0  # Сбрасываем счётчик
 
 @ug_router.message(Command('about', ignore_case=True))
 async def about_cmd(message: types.Message):
